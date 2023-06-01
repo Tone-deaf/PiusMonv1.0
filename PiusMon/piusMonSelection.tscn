@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=3 uid="uid://5xebx8akqqne"]
+
+[ext_resource type="Script" path="res://piusMonSelection.gd" id="1_mhu72"]
+[ext_resource type="Texture2D" uid="uid://ixobkwq0nfxh" path="res://PiusMon/PiusMon sprite/bigGuyIdle.png" id="2_46l5p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qlt4"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gr88"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrawc"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="piusMonSelection" type="Node"]
+script = ExtResource("1_mhu72")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.290196, 0.423529, 0.823529, 1)
+
+[node name="fightnbackButtons" type="MarginContainer" parent="."]
+offset_top = 670.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = -50
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="fightnbackButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="fightnbackButtons/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="fightButton" type="Button" parent="fightnbackButtons/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_4qlt4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6gr88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vrawc")
+text = "Fight!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="fightnbackButtons/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="backButton" type="Button" parent="fightnbackButtons/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_4qlt4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6gr88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vrawc")
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 120.0
+offset_top = 212.0
+offset_right = 1800.0
+offset_bottom = 572.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 200
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_46l5p")
+expand_mode = 4
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 250.0
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 125
+text = "Select 2 Pius-Mon
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer/fightButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer/fightButton" to="." method="_on_fight_button_pressed"]
+[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer2/backButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer2/backButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwpfkew0fmv7y"]
+
+[ext_resource type="Texture2D" uid="uid://dmrm0gslyisvb" path="res://Background sprite/BackGroundTest.png" id="1_rfqud"]
+[ext_resource type="PackedScene" uid="uid://yf8buv4bxnwe" path="res://PiusMon/bigGuy.tscn" id="2_1lds3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8aa5"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4t1l"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ybm4"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Background" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 1962.0
+offset_bottom = 1118.0
+texture = ExtResource("1_rfqud")
+
+[node name="attckSwapButton" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 160.0
+
+[node name="buttonContainer" type="HBoxContainer" parent="attckSwapButton"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="attckSwapButton/buttonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Attack button" type="Button" parent="attckSwapButton/buttonContainer/MarginContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8aa5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m4t1l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ybm4")
+text = "Attack"
+
+[node name="MarginContainer2" type="MarginContainer" parent="attckSwapButton/buttonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="swapButtonn" type="Button" parent="attckSwapButton/buttonContainer/MarginContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8aa5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m4t1l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ybm4")
+text = "Swap
+"
+
+[node name="playercontainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 397.0
+offset_right = 714.0
+offset_bottom = 958.0
+
+[node name="BigGuy" parent="playercontainer" instance=ExtResource("2_1lds3")]
+position = Vector2(317, 283)
+is_player = false
+dammage = 20
+speed = 40
+
+[node name="enemyContainer" type="MarginContainer" parent="."]
+offset_left = 1268.0
+offset_top = 440.0
+offset_right = 1863.0
+offset_bottom = 1001.0
