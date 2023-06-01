@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6rg0fxaxsva0"]
+
+[ext_resource type="Script" path="res://PiusMon/thorny.gd" id="1_sauac"]
+[ext_resource type="Texture2D" uid="uid://cs6gs7shb5cn0" path="res://asset/PiusMon sprite/thorny.png" id="2_wnc7i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsjrk"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wic6a"]
+bg_color = Color(0.333333, 0.635294, 0.34902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ha4dp"]
+font_size = 57
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="thorny" type="Node2D"]
+script = ExtResource("1_sauac")
+maxHealth = 31
+
+[node name="BigBoySprite" type="Sprite2D" parent="."]
+position = Vector2(-3.05176e-05, 0)
+scale = Vector2(0.950926, 0.958333)
+texture = ExtResource("2_wnc7i")
+
+[node name="healthBar" type="ProgressBar" parent="."]
+offset_left = -238.0
+offset_top = -354.0
+offset_right = 232.0
+offset_bottom = -262.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dsjrk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wic6a")
+max_value = 40.0
+step = 1.0
+value = 40.0
+show_percentage = false
+
+[node name="healthtext" type="Label" parent="healthBar"]
+layout_mode = 0
+offset_right = 470.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 50
+text = "40/40
+"
+label_settings = SubResource("LabelSettings_ha4dp")
+horizontal_alignment = 1
+vertical_alignment = 1

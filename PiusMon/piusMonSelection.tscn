@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://5xebx8akqqne"]
+[gd_scene load_steps=6 format=3 uid="uid://dvvy41k2ubolj"]
 
 [ext_resource type="Script" path="res://piusMonSelection.gd" id="1_mhu72"]
-[ext_resource type="Texture2D" uid="uid://ixobkwq0nfxh" path="res://PiusMon/PiusMon sprite/bigGuyIdle.png" id="2_46l5p"]
+[ext_resource type="Texture2D" uid="uid://ixobkwq0nfxh" path="res://asset/PiusMon sprite/bigGuyIdle.png" id="2_6m7s1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qlt4"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -96,7 +96,7 @@ theme_override_constants/margin_left = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("2_46l5p")
+texture = ExtResource("2_6m7s1")
 expand_mode = 4
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/MarginContainer"]
@@ -128,7 +128,7 @@ text = "Select 2 Pius-Mon
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer/fightButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer/fightButton" to="." method="_on_fight_button_pressed"]
-[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer2/backButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer/fightButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer2/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="fightnbackButtons/VBoxContainer2/MarginContainer2/backButton" to="." method="_on_exit_button_pressed"]

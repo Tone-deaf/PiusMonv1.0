@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwpfkew0fmv7y"]
+[gd_scene load_steps=8 format=3 uid="uid://hroqla0te8si"]
 
-[ext_resource type="Texture2D" uid="uid://dmrm0gslyisvb" path="res://Background sprite/BackGroundTest.png" id="1_rfqud"]
-[ext_resource type="PackedScene" uid="uid://yf8buv4bxnwe" path="res://PiusMon/bigGuy.tscn" id="2_1lds3"]
+[ext_resource type="Script" path="res://BattlePhase.gd" id="1_y2arq"]
+[ext_resource type="PackedScene" path="res://PiusMon/bigGuy.tscn" id="2_1lds3"]
+[ext_resource type="Texture2D" uid="uid://dmrm0gslyisvb" path="res://asset/Background sprite/BackGroundTest.png" id="2_f3hg3"]
+[ext_resource type="PackedScene" path="res://PiusMon/thorny.tscn" id="3_nturu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8aa5"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -31,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y2arq")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -38,7 +41,7 @@ offset_left = -30.0
 offset_top = -30.0
 offset_right = 1962.0
 offset_bottom = 1118.0
-texture = ExtResource("1_rfqud")
+texture = ExtResource("2_f3hg3")
 
 [node name="attckSwapButton" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -84,13 +87,15 @@ offset_right = 714.0
 offset_bottom = 958.0
 
 [node name="BigGuy" parent="playercontainer" instance=ExtResource("2_1lds3")]
-position = Vector2(317, 283)
-is_player = false
-dammage = 20
-speed = 40
+position = Vector2(316, 325)
 
 [node name="enemyContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 1268.0
 offset_top = 440.0
 offset_right = 1863.0
 offset_bottom = 1001.0
+
+[node name="BigGuy2" parent="enemyContainer" instance=ExtResource("3_nturu")]
+position = Vector2(323, 294)
+maxHealth = 20
